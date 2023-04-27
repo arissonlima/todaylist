@@ -15,8 +15,16 @@
   box-sizing: border-box;
 }
 
+*::selection{
+  background: var(--yellow);
+  color: var(--gray-900);
+}
+
 body{
+  width: 100vw;
+  height: 100vh;
   font-family: "Inter", sans-serif;
+  display: flex;
 }
 
 li{
@@ -25,4 +33,138 @@ li{
 
 a{
   text-decoration: none;
+}
+
+/* input{
+  outline: none;
+} */
+
+button{
+  border: none;
+}
+
+sidebar{
+  width: 40%;
+  background: linear-gradient(rgba(255, 217, 125, 0.7), rgba(255, 217, 125, 1)), url("../assets/cover.png");
+}
+
+main{
+  width: 60%;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+main h1{
+  margin-top: 64px;
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 400;
+  text-align: center;
+  color: var(--gray-900);
+}
+
+main h2{
+  margin-top: 16px;
+  font-size: 1.125rem;
+  text-align: center;
+  font-weight: 400;
+  color: var(--gray-600);
+}
+
+.tasks{
+  margin: 32px auto 0;
+  padding-left: 6px;
+  padding-right: 6px;
+  overflow-y: scroll;
+}
+
+.bar{
+  width: 10px;
+  height: 64px;
+  position: absolute;
+  left: 0;
+  border-radius: 16px 0 0 16px;
+}
+
+.task{
+  width: 704px;
+  height: 64px;
+  border-radius: 16px;
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 32px;
+  padding-right: 32px;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.task span{
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+  color: var(--gray-600);
+}
+
+.addTaskButton{
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--purple-600);
+  color: var(--purple-900);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .5s;
+}
+
+.addTaskButton:hover{
+  background: var(--purple-900);
+  color: var(--white);
+}
+
+.footer{
+  width: 470px;
+  height: 64px;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+}
+
+.footer-content{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer input{
+  width: 400px;
+  height: 64px;
+  border: 2px solid var(--purple-600);
+  border-radius: 16px;
+  padding: 16px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--gray-900);
+}
+
+.footer input:focus{
+  outline: 2px solid var(--purple-600);
+}
+
+.footer input::placeholder{
+  color: var(--purple-600);
+}
+
+.green{
+  background: var(--green);
+}
+
+.red{
+  background: var(--red);
 }
