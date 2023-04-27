@@ -1,0 +1,28 @@
+:root{
+  --yellow: #FFD97D;
+  --green: #AAF683;
+  --red: #EE6055;
+  --purple-900: hsla(230, 35%, 20%, 1);
+  --purple-600: #8093F1;
+  --gray-900: #2E2D2D;
+  --gray-600: #525151;
+  --white: #FFFFFF;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Inter", sans-serif;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
