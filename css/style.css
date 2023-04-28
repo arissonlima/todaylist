@@ -350,11 +350,18 @@ main h2{
 
 @media(max-width: 500px){
   sidebar{
-    width: 10%;
+    width: 5%;
   }
 
   main{
     width: 90%;
+  }
+
+  .icon-trash{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-bottom: 3px;
   }
 
   .footer{
@@ -376,7 +383,7 @@ main h2{
   }
 
   .task{
-    width: 360px;
+    max-width: 300px;
   }
 }
 
