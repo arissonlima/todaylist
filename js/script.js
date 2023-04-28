@@ -76,7 +76,7 @@ function showTasks() {
           class="doneTask"
           onclick="doneTask(${index})"
         />
-          <img onclick="deleteTask()" src="../assets/icon-delete.png" class="icon-trash"></img>
+          <img onclick="deleteTask()" src="./assets/icon-delete.png" class="icon-trash"></img>
       </div>
       </li>
     `;
