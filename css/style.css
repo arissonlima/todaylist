@@ -380,7 +380,11 @@ main h2{
   }
 }
 
-@media(max-width: 300px){
+@media(max-width: 375px){
+  body{
+    height: 100vh;
+  }
+
   sidebar{
     width: 5%;
     height: 100vh;
@@ -389,6 +393,10 @@ main h2{
   main{
     width: 95%;
     height: 100vh;
+  }
+
+  .congratulations{
+    margin-top: 40%;
   }
 
   .bar{
@@ -400,7 +408,7 @@ main h2{
   }
 
   .task{
-    width: 260px;
+    width: 300px;
     height: 32px;
     padding-left: 32px;
     padding-right: 32px;
@@ -425,7 +433,7 @@ main h2{
 
   .footer{
     width: 200px;
-    right: 16px;
+    height: 32px;
   }
 
   .footer-content{
