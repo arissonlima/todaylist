@@ -37,6 +37,16 @@ function isEmpty() {
   }
 }
 
+function checkEmptyInput() {
+  if (inputAddTask.value.length === 0 && inputAddTask.value === "") {
+    btnAddTask.setAttribute("disabled", "");
+    btnAddTask.classList.add("inputEmpty");
+  } else {
+    btnAddTask.removeAttribute("disabled", "");
+    btnAddTask.classList.remove("inputEmpty");
+  }
+}
+
 function addNewTask() {
   tasksList.push({
     task: inputAddTask.value,
@@ -45,6 +55,7 @@ function addNewTask() {
   inputAddTask.value = "";
   congratulationsMsg.classList.remove("emptyTasksList");
   showTasks();
+  checkEmptyInput();
 }
 
 function deleteTask(index) {
@@ -86,5 +97,7 @@ function showTasks() {
 }
 
 isEmpty();
+checkEmptyInput();
 
 btnAddTask.addEventListener("click", addNewTask);
+inputAddTask.addEventListener("keyup", checkEmptyInput);
