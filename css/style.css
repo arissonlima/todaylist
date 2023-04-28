@@ -368,3 +368,71 @@ main h2{
     width: 360px;
   }
 }
+
+@media(max-width: 300px){
+  sidebar{
+    width: 5%;
+    height: 100vh;
+  }
+
+  main{
+    width: 95%;
+    height: 100vh;
+  }
+
+  .bar{
+    width: 10px;
+    height: 32px;
+    position: absolute;
+    left: 0;
+    border-radius: 16px 0 0 16px;
+  }
+
+  .task{
+    width: 260px;
+    height: 32px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .task span{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .icon-trash{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-bottom: 1px;
+  }
+
+  .doneTask{
+    width: 14px;
+    height: 14px;
+  }
+
+  .footer{
+    width: 200px;
+    right: 16px;
+  }
+
+  .footer-content{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    float: right;
+  }
+
+  .footer input{
+    width: 200px;
+    height: 48px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .addTaskButton{
+    width: 48px;
+    height: 48px;
+  }
+}
