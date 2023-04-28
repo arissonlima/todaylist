@@ -112,7 +112,8 @@ main h2{
 
 .congratulations{
   margin-top: 15%;
-  font-size:24px;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 400;
   color: var(--gray-900);
   text-align: center;
@@ -197,4 +198,173 @@ main h2{
   color: var(--red);
   cursor: pointer;
   display: none;
+}
+
+.done span{
+  text-decoration: line-through;
+}
+
+@media(max-width: 1200px){
+  main h1{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  main h2{
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .congratulations{
+    margin-top: 20%;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .footer-content{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    float: right;
+  }
+
+  .footer input{
+    width: 300px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .task{
+    width: 604px;
+  }
+}
+
+@media(max-width: 1050px){
+  .task{
+    width: 504px;
+  }
+}
+
+@media(max-width: 900px){
+  sidebar{
+    width: 30%;
+  }
+
+  main{
+    width: 70%;
+  }
+}
+
+@media(max-width: 700px){
+  main h1{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  main h2{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .congratulations{
+    margin-top: 30%;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .footer{
+    width: 400px;
+    right: 32px;
+  }
+
+  .footer-content{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    float: right;
+  }
+
+  .footer input{
+    width: 300px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .task{
+    width: 404px;
+  }
+}
+
+@media(max-width: 600px){
+  main h1{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  main h2{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .congratulations{
+    margin-top: 30%;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  .footer{
+    width: 300px;
+    right: 16px;
+  }
+
+  .footer-content{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    float: right;
+  }
+
+  .footer input{
+    width: 260px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .task{
+    width: 360px;
+  }
+}
+
+@media(max-width: 500px){
+  sidebar{
+    width: 10%;
+  }
+
+  main{
+    width: 90%;
+  }
+
+  .footer{
+    width: 200px;
+    right: 16px;
+  }
+
+  .footer-content{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    float: right;
+  }
+
+  .footer input{
+    width: 200px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .task{
+    width: 360px;
+  }
 }

@@ -4,6 +4,7 @@ const btnDoneTask = document.querySelector(".doneTask");
 const btnRemoveTask = document.querySelector(".btnRemoveTask");
 const dayOfTheWeek = document.querySelector(".day-of-the-week");
 const fullDate = document.querySelector(".full-date");
+const tasks = document.querySelector(".tasks");
 const task = document.querySelector(".task");
 const congratulationsMsg = document.querySelector(".congratulations");
 
@@ -28,30 +29,62 @@ const year = date.getFullYear();
 dayOfTheWeek.innerHTML = week[date.getDay()];
 fullDate.toLocaleString().innerHTML = `${month} ${day}, ${year}`;
 
-function addNewTask() {
-  console.log(inputAddTask.value);
-}
-
-function deleteTask() {
-  alert("Deletando...");
-}
-
-function doneTask() {
-  alert("Finalizando tarefa...");
-}
-
 let tasksList = [];
 
-tasksList.forEach((item) => {
-  task.innerHTML = item;
-  console.log(item);
-});
-
-if (tasksList.length === 0) {
-  congratulationsMsg.classList.add("emptyTasksList");
-  console.log("Tá vazia!");
+function isEmpty() {
+  if (tasksList.length === 0) {
+    congratulationsMsg.classList.add("emptyTasksList");
+  }
 }
 
+function addNewTask() {
+  tasksList.push({
+    task: inputAddTask.value,
+    done: false,
+  });
+  inputAddTask.value = "";
+  congratulationsMsg.classList.remove("emptyTasksList");
+  showTasks();
+}
+
+function deleteTask(index) {
+  tasksList.splice(index, 1);
+  showTasks();
+  isEmpty();
+}
+
+function doneTask(index) {
+  const bar = document.querySelector(".bar");
+  tasksList[index].done = !tasksList[index].done;
+  showTasks();
+}
+
+function showTasks() {
+  let newLi = "";
+  tasksList.forEach((item, index) => {
+    newLi =
+      newLi +
+      `
+      <li class="task ${item.done && "done"}">
+      <div class="bar ${item.done ? "red" : "green"}"></div>
+      <span>${item.task}</span>
+      <div class="actions">
+        <img src="${
+          item.done ? "./assets/red-circle.png" : "./assets/green-circle.png"
+        }"
+          alt="Green Circle"
+          class="doneTask"
+          onclick="doneTask(${index})"
+        />
+          <img onclick="deleteTask()" src="../assets/icon-delete.png" class="icon-trash"></img>
+      </div>
+      </li>
+    `;
+  });
+
+  tasks.innerHTML = newLi;
+}
+
+isEmpty();
+
 btnAddTask.addEventListener("click", addNewTask);
-btnDoneTask.addEventListener("click", doneTask);
-btnRemoveTask.addEventListener("click", deleteTask);
