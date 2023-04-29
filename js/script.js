@@ -47,6 +47,16 @@ function checkEmptyInput() {
   }
 }
 
+function loadTasks() {
+  const localStorageTasks = localStorage.getItem("@todaylist:tasks");
+
+  if (localStorageTasks) {
+    tasksList = JSON.parse(localStorageTasks);
+  }
+
+  showTasks();
+}
+
 function addNewTask() {
   tasksList.push({
     task: inputAddTask.value,
@@ -94,8 +104,11 @@ function showTasks() {
   });
 
   tasks.innerHTML = newLi;
+
+  localStorage.setItem("@todaylist:tasks", JSON.stringify(tasksList));
 }
 
+loadTasks();
 isEmpty();
 checkEmptyInput();
 
