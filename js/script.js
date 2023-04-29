@@ -85,6 +85,7 @@ function addNewTask() {
 
 function deleteTask(index) {
   tasksList.splice(index, 1);
+  console.log(index);
   showTasks();
   isEmpty();
 }
@@ -108,11 +109,10 @@ function showTasks() {
         <img src="${
           item.done ? "./assets/red-circle.png" : "./assets/green-circle.png"
         }"
-          alt="Green Circle"
           class="doneTask"
           onclick="doneTask(${index})"
         />
-          <img onclick="deleteTask()" src="./assets/icon-delete.png" class="icon-trash"></img>
+          <img onclick="deleteTask(${index})" src="./assets/icon-delete.png" class="icon-trash"></img>
       </div>
       </li>
     `;
