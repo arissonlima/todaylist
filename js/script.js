@@ -85,7 +85,6 @@ function addNewTask() {
 
 function deleteTask(index) {
   tasksList.splice(index, 1);
-  console.log(index);
   showTasks();
   isEmpty();
 }
