@@ -21,13 +21,28 @@ const week = [
   "Sábado",
 ];
 
+const monthNames = [
+  "Janeiro",
+  "Fevereiro",
+  "Março",
+  "Abril",
+  "Maio",
+  "Junho",
+  "Julho",
+  "Agosto",
+  "Setembro",
+  "Outubro",
+  "Novembro",
+  "Dezembro",
+];
+
 const date = new Date();
 const day = date.getDate();
-const month = date.getMonth().toLocaleString("en-IN");
+const month = date.getMonth();
 const year = date.getFullYear();
 
 dayOfTheWeek.innerHTML = week[date.getDay()];
-fullDate.toLocaleString().innerHTML = `${month} ${day}, ${year}`;
+fullDate.innerHTML = `${day} de ${monthNames[month]} de ${year}`;
 
 let tasksList = [];
 
